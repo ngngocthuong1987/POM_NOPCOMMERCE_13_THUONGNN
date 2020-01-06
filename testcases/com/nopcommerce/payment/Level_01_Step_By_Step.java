@@ -104,6 +104,8 @@ public class Level_01_Step_By_Step {
 
 	@AfterClass
 	public void afterClass() {
+
+		//Quit browser
 		driver.quit();
 	}
 
