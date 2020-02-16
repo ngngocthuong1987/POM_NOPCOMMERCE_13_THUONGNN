@@ -21,6 +21,10 @@ public class AbstractPage {
 	JavascriptExecutor jsExecutor;
 	WebDriverWait waitExplicit;
 
+	public AbstractPage(WebDriver driver) {
+		this.driver = driver;
+	}
+
 	/**
 	 * Open maxium browser with an Url
 	 *
