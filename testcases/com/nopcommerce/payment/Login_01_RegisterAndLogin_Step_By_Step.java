@@ -12,7 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Level_01_Step_By_Step {
+public class Login_01_RegisterAndLogin_Step_By_Step {
 
 	WebDriver driver;
 	String email;
