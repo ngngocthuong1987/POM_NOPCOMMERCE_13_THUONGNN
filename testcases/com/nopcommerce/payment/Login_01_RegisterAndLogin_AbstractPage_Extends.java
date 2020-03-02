@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import commons.AbstractPage;
 import commons.AbstractPages;
 
-public class Login_01_RegisterAndLogin_Extends extends AbstractPages {
+public class Login_01_RegisterAndLogin_AbstractPage_Extends extends AbstractPages {
 
 	WebDriver driver;
 	String email;
