@@ -38,4 +38,8 @@ public class LoginPageObject extends AbstractPages {
 		return isElementDisplay(driver, String.format(LoginPageUI.VALIDTE_EMAIL_ERROR_MESSAGE, errorMessage));
 	}
 
+	public boolean isLoginSuccess() {
+		return getCurrentUrl(driver).equals("https://demo.nopcommerce.com/");
+	}
+
 }

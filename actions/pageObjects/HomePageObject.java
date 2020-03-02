@@ -19,4 +19,10 @@ public class HomePageObject extends AbstractPages {
 		return new LoginPageObject(driver);
 	}
 
+	public RegisterPageObject clickToRegisterPage() {
+		waitToElementClickable(driver, HomePageUI.REGISTER_LINK);
+		clickToElement(driver, HomePageUI.REGISTER_LINK);
+		return new RegisterPageObject(driver);
+	}
+
 }

@@ -2,7 +2,7 @@
 <suite name="Nop Commerce" parallel="false">
   <test name="Run on CHROME browser">
     <classes>
-      <class name="com.nopcommerce.login.Login_01_LoginToSystem"/>
+      <class name="com.nopcommerce.payment.Login_01_RegisterAndLogin_PageObject"/>
     </classes>
   </test>
 </suite>
