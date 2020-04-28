@@ -26,14 +26,18 @@ public class HomePageObject extends AbstractPagesFactory {
 
 	public LoginPageObject clickToLoginPage() {
 		waitToElementClickable(driver, loginLink);
-		clickToElement(driver, loginLink);
+		clickToElement(loginLink);
 		return new LoginPageObject(driver);
 	}
 
 	public RegisterPageObject clickToRegisterPage() {
 		waitToElementClickable(driver, registerLink);
-		clickToElement(driver, registerLink);
+		clickToElement(registerLink);
 		return new RegisterPageObject(driver);
+	}
+
+	public boolean isLoginSuccess() {
+		return getCurrentUrl(driver).equals("https://demo.nopcommerce.com/");
 	}
 
 }

@@ -13,7 +13,7 @@ import pageObjects.HomePageObject;
 import pageObjects.LoginPageObject;
 import pageObjects.RegisterPageObject;
 
-public class Login_01_RegisterAndLogin_PageObject {
+public class Login_03_RegisterAndLogin_PageObject {
 	AbstractPage abstractPage;
 
 	private WebDriver driver;
@@ -26,6 +26,7 @@ public class Login_01_RegisterAndLogin_PageObject {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.setProperty("webdriver.gecko.driver", ".//libraries//geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
@@ -60,9 +61,9 @@ public class Login_01_RegisterAndLogin_PageObject {
 
 		loginPageObject.inputToEmailTextBox(email);
 		loginPageObject.inputToPasswordTextBox(password);
-		loginPageObject.clickToLoginButton();
+		homePageObject = loginPageObject.clickToLoginButton();
 
-		loginPageObject.isLoginSuccess();
+		homePageObject.isLoginSuccess();
 	}
 
 	@AfterClass

@@ -14,7 +14,7 @@ import pageFactory.LoginPageObject;
 import pageFactory.RegisterPageObject;
 
 
-public class Login_01_RegisterAndLogin_PageFactory {
+public class Login_04_RegisterAndLogin_PageFactory {
 	AbstractPage abstractPage;
 
 	private WebDriver driver;
@@ -28,9 +28,7 @@ public class Login_01_RegisterAndLogin_PageFactory {
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", ".//libraries//geckodriver.exe");
-//		System.setProperty("webdriver.chrome.driver", ".//libraries//chromedriver.exe");
 		driver = new FirefoxDriver();
-//		driver = new ChromeDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		driver.manage().window().maximize();
 
@@ -54,7 +52,6 @@ public class Login_01_RegisterAndLogin_PageFactory {
 		registerPageObject.inputConfirmPassword(password);
 		registerPageObject.clickRegisterButton();
 
-		registerPageObject.isRegistSuccess();
 		homePageObject = registerPageObject.clickToLogOutLink();
 	}
 
@@ -64,9 +61,9 @@ public class Login_01_RegisterAndLogin_PageFactory {
 
 		loginPageObject.inputToEmailTextBox(email);
 		loginPageObject.inputToPasswordTextBox(password);
-		loginPageObject.clickToLoginButton();
+		homePageObject = loginPageObject.clickToLoginButton();
 
-		loginPageObject.isLoginSuccess();
+		homePageObject.isLoginSuccess();
 	}
 
 	@AfterClass

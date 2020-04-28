@@ -54,67 +54,66 @@ public class RegisterPageObject extends AbstractPagesFactory {
 	private WebElement registerSuccessLink;
 
 	@FindBy(how = How.XPATH, using = "//a[@class='ico-logout' and text()='Log out']")
-	private WebElement LogoutLink;
+	private WebElement logoutLink;
 
 
 	public void selectMaleGender() {
 		waitToElementClickable(driver, genderMaleRadio);
-		clickToElement(driver, genderMaleRadio);
+		clickToElement(genderMaleRadio);
 	}
 
 	public void inputFistName(String value) {
 		waitToElementDisplayed(driver, firstNameTextBox);
-		sendKeyToElement(driver, firstNameTextBox, value);
+		sendKeyToElement(firstNameTextBox, value);
 	}
 
 	public void inputLastName(String value) {
-		waitToElementDisplayed(driver, firstNameTextBox);
-		sendKeyToElement(driver, firstNameTextBox, value);
+		waitToElementDisplayed(driver, lastNameTextBox);
+		sendKeyToElement(lastNameTextBox, value);
 	}
 
 	public void selectBirthDay(String valueItem) {
 		waitToElementDisplayed(driver, birthDaySelect);
-		selectItemInHtmlDropdown(driver, birthDaySelect, valueItem);
+		selectItemInHtmlDropdown(birthDaySelect, valueItem);
 	}
 
 	public void selectBirthMonth(String valueItem) {
 		waitToElementDisplayed(driver, birthMonthSelect);
-		selectItemInHtmlDropdown(driver, birthMonthSelect, valueItem);
+		selectItemInHtmlDropdown(birthMonthSelect, valueItem);
 	}
 
 	public void selectBirthYear(String valueItem) {
 		waitToElementDisplayed(driver, birthYearSelect);
-		selectItemInHtmlDropdown(driver, birthYearSelect, valueItem);
+		selectItemInHtmlDropdown(birthYearSelect, valueItem);
 	}
 
 	public void inputEmail(String value) {
 		waitToElementDisplayed(driver, emailTextBox);
-		sendKeyToElement(driver, emailTextBox, value);
+		sendKeyToElement(emailTextBox, value);
 
 	}
 
 	public void inputCompanyName(String value) {
 		waitToElementDisplayed(driver, companyTextBox);
-		sendKeyToElement(driver, companyTextBox, value);
+		sendKeyToElement(companyTextBox, value);
 
 	}
 
 	public void inputPassword(String value) {
 		waitToElementDisplayed(driver, passwordTextBox);
-		sendKeyToElement(driver, passwordTextBox, value);
+		sendKeyToElement(passwordTextBox, value);
 
 	}
 
 	public void inputConfirmPassword(String value) {
 		waitToElementDisplayed(driver, confirmPasswordTextBox);
-		sendKeyToElement(driver, confirmPasswordTextBox, value);
+		sendKeyToElement(confirmPasswordTextBox, value);
 
 	}
 
 	public void clickRegisterButton() {
 		waitToElementDisplayed(driver, registerButton);
-		clickToElement(driver, registerButton);
-
+		clickToElement(registerButton);
 	}
 
 	public boolean isRegistSuccess() {
@@ -122,8 +121,8 @@ public class RegisterPageObject extends AbstractPagesFactory {
 	}
 
 	public HomePageObject clickToLogOutLink() {
-		waitToElementClickable(driver, LogoutLink);
-		clickToElement(driver, LogoutLink);
+		waitToElementClickable(driver, logoutLink);
+		clickToElement(logoutLink);
 		return new HomePageObject(driver);
 	}
 

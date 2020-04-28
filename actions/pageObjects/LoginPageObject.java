@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPages;
+import commons.PageGeneratorManager;
 import pageUIs.LoginPageUI;
 
 public class LoginPageObject extends AbstractPages {
@@ -11,6 +12,12 @@ public class LoginPageObject extends AbstractPages {
 
 	public LoginPageObject(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	public HomePageObject clickToLoginButton() {
+		waitToElementDisplayed(driver, LoginPageUI.LOGIN_BUTTON);
+		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
+		return PageGeneratorManager.getHomePageObject(driver);
 	}
 
 	public void inputToEmailTextBox(String email) {
@@ -23,11 +30,6 @@ public class LoginPageObject extends AbstractPages {
 		sendKeyToElement(driver, LoginPageUI.PASSWORD_TEXTBOX, password);
 	}
 
-	public void clickToLoginButton() {
-		waitToElementDisplayed(driver, LoginPageUI.LOGIN_BUTTON);
-		clickToElement(driver, LoginPageUI.LOGIN_BUTTON);
-	}
-
 	public boolean isErrorEmailMessageDisplayed(String errorMessage) {
 		waitToElementDisplayed(driver, String.format(LoginPageUI.EMAIL_ERROR_MESSAGE, errorMessage));
 		return isElementDisplay(driver, String.format(LoginPageUI.EMAIL_ERROR_MESSAGE, errorMessage));
@@ -36,10 +38,6 @@ public class LoginPageObject extends AbstractPages {
 	public boolean isErrorValidateMessageDisplayed(String errorMessage) {
 		waitToElementDisplayed(driver, String.format(LoginPageUI.VALIDTE_EMAIL_ERROR_MESSAGE, errorMessage));
 		return isElementDisplay(driver, String.format(LoginPageUI.VALIDTE_EMAIL_ERROR_MESSAGE, errorMessage));
-	}
-
-	public boolean isLoginSuccess() {
-		return getCurrentUrl(driver).equals("https://demo.nopcommerce.com/");
 	}
 
 }

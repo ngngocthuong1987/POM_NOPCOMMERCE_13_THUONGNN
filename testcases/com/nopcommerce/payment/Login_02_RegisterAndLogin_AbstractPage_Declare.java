@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import commons.AbstractPage;
 
-public class Login_01_RegisterAndLogin_AbstractPage_Declare {
+public class Login_02_RegisterAndLogin_AbstractPage_Declare {
 
 	WebDriver driver;
 	String email;

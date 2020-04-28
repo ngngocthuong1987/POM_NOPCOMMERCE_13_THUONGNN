@@ -28,21 +28,18 @@ public class LoginPageObject extends AbstractPagesFactory {
 
 	public void inputToEmailTextBox(String email) {
 		waitToElementDisplayed(driver, emailTextBox);
-		sendKeyToElement(driver, emailTextBox, email);
+		sendKeyToElement(emailTextBox, email);
 	}
 
 	public void inputToPasswordTextBox(String password) {
 		waitToElementDisplayed(driver, passwordTextBox);
-		sendKeyToElement(driver, passwordTextBox, password);
+		sendKeyToElement(passwordTextBox, password);
 	}
 
-	public void clickToLoginButton() {
+	public HomePageObject clickToLoginButton() {
 		waitToElementDisplayed(driver, loginButton);
-		clickToElement(driver, loginButton);
-	}
-
-	public boolean isLoginSuccess() {
-		return getCurrentUrl(driver).equals("https://demo.nopcommerce.com/");
+		clickToElement(loginButton);
+		return new HomePageObject(driver);
 	}
 
 }

@@ -99,15 +99,15 @@ public class AbstractPagesFactory {
 		return By.xpath(locator);
 	}
 
-	public void clickToElement(WebDriver driver, WebElement element) {
+	public void clickToElement(WebElement element) {
 		element.click();
 	}
 
-	public void sendKeyToElement(WebDriver driver, WebElement element, String value) {
+	public void sendKeyToElement(WebElement element, String value) {
 		element.sendKeys(value);
 	}
 
-	public void selectItemInHtmlDropdown(WebDriver driver, WebElement element, String value) {
+	public void selectItemInHtmlDropdown(WebElement element, String value) {
 		select = new Select(element);
 		select.selectByVisibleText(value);
 	}

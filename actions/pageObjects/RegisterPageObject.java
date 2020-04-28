@@ -3,6 +3,7 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 
 import commons.AbstractPages;
+import commons.PageGeneratorManager;
 import pageUIs.RegisterPageUI;
 
 public class RegisterPageObject extends AbstractPages {
@@ -11,6 +12,12 @@ public class RegisterPageObject extends AbstractPages {
 
 	public RegisterPageObject(WebDriver driver) {
 		this.driver = driver;
+	}
+
+	public HomePageObject clickToLogOutLink() {
+		waitToElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
+		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
+		return PageGeneratorManager.getHomePageObject(driver);
 	}
 
 	public void selectMaleGender() {
@@ -75,12 +82,6 @@ public class RegisterPageObject extends AbstractPages {
 
 	public boolean isRegistSuccess() {
 		return isElementDisplay(driver, RegisterPageUI.REGIST_SUCCESS);
-	}
-
-	public HomePageObject clickToLogOutLink() {
-		waitToElementClickable(driver, RegisterPageUI.LOGOUT_LINK);
-		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
-		return new HomePageObject(driver);
 	}
 
 }
